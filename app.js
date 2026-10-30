@@ -42,7 +42,7 @@
 
   function shell(html) {
     const nav = [['dashboard', '📊', 'Dashboard'], ['vault', '🔐', 'My Vault'], ['generator', '🎲', 'Password Generator'], ['categories', '🏷️', 'Categories'], ['security', '🛡️', 'Security Center'], ['settings', '⚙️', 'Settings']];
-    $app.innerHTML = `<div class="app"><aside class="sidebar"><b class="brand">🛡️ SecureVault</b><nav>${nav.map(([v, i, l]) => `<a href="#${v}" class="${view === v || (view === 'form' && v === 'vault') ? 'on' : ''}">${i} <span>${l}</span></a>`).join('')}</nav>
+    $app.innerHTML = `<div class="app"><aside class="sidebar"><b class="brand">🛡️ SecureVault</b><nav>${nav.map(([v, i, l]) => `<a href="#${v}" aria-label="${l}" class="${view === v || (view === 'form' && v === 'vault') ? 'on' : ''}">${i} <span>${l}</span></a>`).join('')}</nav>
     <button class="btn btn-ghost" data-act="logout">🚪 Logout</button></aside><main class="main">${html}</main></div>`;
   }
 
